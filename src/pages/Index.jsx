@@ -20,7 +20,7 @@ const Index = () => {
   const [treeData, setTreeData] = useState(initialData);
 
   const addNode = (node) => {
-    const newNode = { name: `New Node ${Math.random().toFixed(2)}` };
+    const newNode = { name: `New Node ${Math.random().toFixed(5)}` };
     if (!node.children) {
       node.children = [];
     }
@@ -30,6 +30,7 @@ const Index = () => {
 
   const handleNodeClick = (nodeData) => {
     addNode(nodeData);
+    setTreeData({ ...treeData });
   };
 
   return (
